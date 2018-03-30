@@ -110,6 +110,7 @@ def openurl(url, timestamp=None):
     
     # create the http request, possibly with a timestamp
     request = urllib2.Request(url)
+    request.add_header('User-Agent', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36')
     if timestamp != None:
         request.add_header('If-Modified-Since', timestamp)
     try:
